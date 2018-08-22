@@ -32,11 +32,7 @@ class Bowling
     # open frame
     if remaining_rolls.size > 1
       running_score += remaining_rolls[0] + remaining_rolls[1]
-      if remaining_rolls.drop(2).empty?
-        running_score
-      else
-        return sum_of_frames(running_score, remaining_rolls.drop(2), current_frame)
-      end
+      return sum_of_frames(running_score, remaining_rolls.drop(2), current_frame)
     end
   end
 end
