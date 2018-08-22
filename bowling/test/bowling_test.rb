@@ -31,4 +31,8 @@ class BowlingGameTest < Minitest::Test
     assert_equal 300, Bowling.new(rolls).score
   end
 
+  def test_scoring_partial_game_with_complete_frames
+    rolls = [1] * 6
+    assert_equal 6, Bowling.new(rolls).score
+  end
 end
