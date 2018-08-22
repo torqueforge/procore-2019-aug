@@ -15,6 +15,7 @@ class Bowling
     current_frame += 1
     if current_frame > max_frames ||
       (remaining_rolls[0] == 10 and remaining_rolls.size < 3) || # defer until strike is complete
+      ((remaining_rolls.take(2).sum) == 10 and remaining_rolls.size < 3) || # defer until spare is complete
       (remaining_rolls.size < 2)
       return running_score
     end
