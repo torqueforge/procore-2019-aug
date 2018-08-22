@@ -41,4 +41,8 @@ class BowlingGameTest < Minitest::Test
     assert_equal 4, Bowling.new(rolls).score
   end
 
+  def test_scoring_partial_game_with_unfullfilled_strike
+    rolls = [10] * 10
+    assert_equal 240, Bowling.new(rolls).score
+  end
 end
