@@ -6,6 +6,6 @@ class Bowling
   end
 
   def score
-    0
+    rolls.sum
   end
 end
