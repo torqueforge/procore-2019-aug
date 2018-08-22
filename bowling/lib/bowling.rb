@@ -22,18 +22,18 @@ class Bowling
 
     # strike
     if (remaining_rolls.take(1).sum) == 10
-      running_score += remaining_rolls[0] + remaining_rolls[1] + remaining_rolls[2]
+      running_score += remaining_rolls.first(3).sum
       return sum_of_frames(running_score, remaining_rolls.drop(1), current_frame)
     end
 
     # spare
     if (remaining_rolls.take(2).sum) == 10
-      running_score += remaining_rolls[0] + remaining_rolls[1] + remaining_rolls[2]
+      running_score += remaining_rolls.first(3).sum
       return sum_of_frames(running_score, remaining_rolls.drop(2), current_frame)
     end
 
     # open frame
-    running_score += remaining_rolls[0] + remaining_rolls[1]
+    running_score += remaining_rolls.first(2).sum
     return sum_of_frames(running_score, remaining_rolls.drop(2), current_frame)
   end
 end
