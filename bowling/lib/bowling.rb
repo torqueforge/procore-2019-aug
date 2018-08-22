@@ -7,7 +7,6 @@ class Bowling
 
   def score
     sum_of_frames
-    rolls.sum
   end
 
   def sum_of_frames(running_score = 0, remaining_rolls = rolls.dup)
