@@ -10,7 +10,6 @@ class Game
   include Observable
 
   attr_reader :input, :output, :scoresheet_output,
-              :scoresheet_maker,
               :num_frames, :players,
               :observers
 
