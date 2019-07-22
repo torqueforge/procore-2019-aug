@@ -2,9 +2,7 @@
 # The goal of this game it to roll the lowest score
 # while knocking down at least 1 pin with every roll.
 #
-# Gutter balls are penalized as per the rules below.
-#
-# The rules are:
+# Gutter balls are penalized thus:
 #   If 1st roll knocks down 0 pins,
 #     score for that roll is 10 and
 #       the frame score includes the score of the next 2 rolls.
@@ -15,7 +13,7 @@
 #       the frame score includes the score of the next roll.
 #   This is a LOWBALL 'spare'.
 #
-#   Open frame is two non-zero rolls.
+# Open frame is two non-zero rolls.
 #
 # The best achievable score is therefore 20.
 
@@ -23,7 +21,7 @@
 # Ponderings:
 #   The existing code is very much not open to LOWBALL.
 #     1) The structure of the config won't support LOWBALL rules
-#     2) LOWBALL allow a roll's score to differ from its pinfall
+#     2) LOWBALL allows a roll's score to differ from its pinfall
 #
 # The fundamental design rule is to isolate the things you need to vary,
 # so the first task here is to understand what, exactly, needs to change.
