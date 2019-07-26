@@ -1,0 +1,69 @@
+#!/usr/bin/env ruby
+
+require_relative '../bowling/bowling'
+
+class String
+  # colorization
+  def colorize(color_code)
+    "\e[#{color_code}m#{self}\e[0m"
+  end
+
+  def red
+    colorize(31)
+  end
+
+  def green
+    colorize(32)
+  end
+
+  def yellow
+    colorize(33)
+  end
+
+  def blue
+    colorize(34)
+  end
+
+  def pink
+    colorize(35)
+  end
+
+  def light_blue
+    colorize(36)
+  end
+end
+
+def flash(text)
+  3.times {
+    print " \r#{text.ljust(8, ' ')}".green
+    sleep 0.1
+    print " \r           "
+    sleep 0.1
+  }
+  print " \r#{text.ljust(8, ' ')}".green
+end
+
+
+##### generate TENPIN rolls
+##### deal with Frame 10 bonus rolls yourself
+
+first  = rand(0..10)
+second = rand(0..(10-first))
+
+puts
+print first
+
+if first == 10
+  flash("STRIKE!")
+else
+  10.times {sleep 0.2; print " . "}
+  print second
+  if first + second == 10
+    print "  Spare!".light_blue
+  else
+    print "   :".red; sleep 0.2; print "-".red; sleep 0.2; print "(".red
+  end
+end
+
+sleep 0.5
+puts "\n\n"

@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../bowling/bowling'
+g = Game.new
+g.play
