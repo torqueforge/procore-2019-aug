@@ -48,7 +48,7 @@ end
 ##### deal with Frame 10 bonus rolls yourself
 
 first  = rand(0..10)
-second = rand(0..(10-first))
+second = (0..(10-first)).to_a.map { |val| Array.new(val+1, val) }.flatten.shuffle.first
 
 puts
 print first
