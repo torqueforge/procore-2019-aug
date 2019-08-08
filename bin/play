@@ -2,4 +2,5 @@
 
 require_relative '../bowling/bowling'
 g = Game.new
+g.add_observer(ClassicScoresheetAdaptor)
 g.play
